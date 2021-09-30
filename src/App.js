@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { PageContext } from './page-context';
 
+import Information from './pages/information';
 import Landing from './pages/landing';
 import Home from './pages/home';
 import Settings from './pages/settings';
@@ -32,6 +33,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/settings" component={Settings} />
+            <Route exact path="/information" component={Information} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/" component={authCheck() ? Home : Landing} />
           </Switch>

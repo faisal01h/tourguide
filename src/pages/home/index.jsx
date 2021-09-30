@@ -3,10 +3,30 @@ import { BsCheckCircle, BsInfoCircle, BsXCircle } from "react-icons/bs";
 
 export default function Home() {
 
+    function getTimeOfDay() {
+        let time = new Date().getHours();
+        if(time > 2 && time < 11) return "morning";
+        else if(time > 10 && time < 16) return "afternoon";
+        else if(time > 15 && time < 19) return "evening";
+        else return "night";
+    }
+
+    function generateGreetings(timeOfDay, name) {
+        if(timeOfDay === "morning") {
+            return "Where are you going to go today, "+name+"?";
+        } else if(timeOfDay === "afternoon") {
+            return "Have a good day, "+name+"?";
+        } else if(timeOfDay === "evening") {
+            return "Do you have any plan for the night, "+name+"?";
+        } else {
+            return "Have a good "+timeOfDay+", "+name+"?";
+        }
+    }
+
     return(
         <div className="text-left bg-blue-900 min-h-screen overflow-y-auto lg:pb-0" style={{scrollSnapType: 'y mandatory'}}>
             <div className="h-64 flex items-center text-left px-5 lg:px-20 text-white fixed lg:relative">
-                <h1 className="text-4xl font-bold">Have a good night, Faisal!</h1>
+                <h1 className="text-4xl font-bold">{generateGreetings(getTimeOfDay(), "Faisal")}</h1>
             </div>
             <div className="" style={{scrollSnapAlign: 'center'}}></div>
             <div className="rounded-t-2xl bg-white px-5 lg:mx-20 lg:px-10 py-5 lg:py-10 flex flex-col space-y-5 top-64 lg:top-0 relative" style={{scrollSnapAlign: 'center'}}>
