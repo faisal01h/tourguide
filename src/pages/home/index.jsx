@@ -9,7 +9,7 @@ export default function Home() {
                 <h1 className="text-4xl font-bold">Have a good night, Faisal!</h1>
             </div>
             <div className="" style={{scrollSnapAlign: 'center'}}></div>
-            <div className="rounded-t-2xl bg-white px-5 lg:mx-20 lg:px-10 pb-20 py-5 lg:py-10 flex flex-col space-y-5 top-64 lg:top-0 relative" style={{scrollSnapAlign: 'center'}}>
+            <div className="rounded-t-2xl bg-white px-5 lg:mx-20 lg:px-10 py-5 lg:py-10 flex flex-col space-y-5 top-64 lg:top-0 relative" style={{scrollSnapAlign: 'center'}}>
                 <div className="w-8 h-1.5 bg-gray-300 rounded-full self-center">
                 </div>
                 <div className="rounded bg-red-500 text-white p-2 flex items-center space-x-2 shadow">

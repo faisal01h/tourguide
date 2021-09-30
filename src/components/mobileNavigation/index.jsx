@@ -22,20 +22,23 @@ export default function MobileNavigation() {
     }, [openDrawer]);
 
     return (
-        <div className="lg:hidden fixed bottom-0 h-16 w-screen bg-white" style={{boxShadow: '7px 7px 7px 7px rgba(0,0,0,.15)'}}>
-            <div className="flex justify-around items-center py-5">
-                <Link className={"flex flex-col items-center px-4 py-1 "+homeDrawerStyle} to="/" onClick={e=>{setDrawer('home')}}>
-                    <BsHouse />
-                </Link>
-                <Link className={"flex flex-col items-center px-4 py-1 "+searchDrawerStyle} to="/search" onClick={e=>{setDrawer('search')}}>
-                    <BsSearch />
-                </Link>
-                <Link className={"flex flex-col items-center px-4 py-1 "+informationDrawerStyle} to="/information" onClick={e=>{setDrawer('information')}}>
-                    <BsInfoCircle />
-                </Link>
-                <Link className={"flex flex-col items-center px-4 py-1 "+settingsDrawerStyle} to="/settings" onClick={e=>{setDrawer('settings')}}>
-                    <BsThreeDots />
-                </Link>
+        <div>
+            <div className="lg:hidden h-16"></div>
+            <div className="lg:hidden fixed bottom-0 h-16 w-screen bg-white" style={{boxShadow: '7px 7px 7px 7px rgba(0,0,0,.15)'}}>
+                <div className="flex justify-around items-center py-5">
+                    <Link className={"flex flex-col items-center px-4 py-1 "+homeDrawerStyle} to="/" onClick={e=>{setDrawer('home')}}>
+                        <BsHouse />
+                    </Link>
+                    <Link className={"flex flex-col items-center px-4 py-1 "+searchDrawerStyle} to="/search" onClick={e=>{setDrawer('search')}}>
+                        <BsSearch />
+                    </Link>
+                    <Link className={"flex flex-col items-center px-4 py-1 "+informationDrawerStyle} to="/information" onClick={e=>{setDrawer('information')}}>
+                        <BsInfoCircle />
+                    </Link>
+                    <Link className={"flex flex-col items-center px-4 py-1 "+settingsDrawerStyle} to="/settings" onClick={e=>{setDrawer('settings')}}>
+                        <BsThreeDots />
+                    </Link>
+                </div>
             </div>
         </div>
     )
