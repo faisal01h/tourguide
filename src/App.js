@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { PageContext } from './page-context';
+
+import Landing from './pages/landing';
+import Home from './pages/home';
+import Settings from './pages/settings';
+import Search from './pages/search';
+import { MobileNavigation } from './components';
+import React, { useEffect, useState } from 'react';
+
+function authCheck() {
+  let user = localStorage.getItem('user');
+  // if(user) return true;
+  // else return false;
+  return true
+}
 
 function App() {
+
+  const [ auth, setAuth ] = useState(false);
+
+  useEffect(() => {
+    console.log('DO NOT INSERT ANY JAVASCRIPT CODE TO PREVENT XSS ATTACK!');
+
+    //authenticate
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PageContext.Provider value={[auth]}>
+        <Router>
+          <Switch>
+            <Route exact path="/settings" component={Settings} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/" component={authCheck() ? Home : Landing} />
+          </Switch>
+          <MobileNavigation />
+        </Router>
+      </PageContext.Provider>
     </div>
   );
 }
